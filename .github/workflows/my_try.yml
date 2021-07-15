@@ -1,0 +1,18 @@
+name: my_try
+on: push
+jobs:
+  first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        env:
+          OPENING_VAR: Hello there!
+          ANSWER_VAR: General Kenobi
+        run: |
+          echo $OPENING_VAR $ANSWER_VAR
+      - name: Greet using Python script
+        run: |
+          x = "Hello World!"
+          print(x)
+        shell: python
